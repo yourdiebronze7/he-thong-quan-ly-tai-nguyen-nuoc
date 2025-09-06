@@ -9,7 +9,7 @@ router.post('/record', async (req, res) => {
         await newUsage.save();
         res.status(201).send(newUsage);
     } catch (error) {
-        console.error(error); // Added error logging
+        console.error(error);
         res.status(500).send({ error: 'Failed to record water usage' });
     }
 });
@@ -19,7 +19,7 @@ router.get('/usages', async (req, res) => {
         const usages = await WaterUsage.find();
         res.send(usages);
     } catch (error) {
-        console.error(error); // Added error logging
+        console.error(error);
         res.status(500).send({ error: 'Failed to retrieve usages' });
     }
 });
