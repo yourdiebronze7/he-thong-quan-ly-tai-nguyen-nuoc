@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/water_management', { useNewUrlParser: true, useUnifiedTopology: true });
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/water_management';
+
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const usageSchema = new mongoose.Schema({
     user: String,
