@@ -5,7 +5,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('Chào mừng đến với hệ thống quản lý tài nguyên nước!');
+    res.send('Welcome to the water resource management system!');
 });
 
 const PORT = process.env.PORT || 3000;
